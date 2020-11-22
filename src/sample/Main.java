@@ -86,9 +86,9 @@ public class Main extends Application {
 
         btRemove.setOnAction(e -> {
             clearBoxes(hBox, vBox);
+            heap.remove();
             view.displayHeap();
             view.setStatusMessage(heap.getNodes().size()==0 ? "No node to remove" : "Removed root");
-            heap.remove();
             updateMessages(hBox, vBox, tfKey, btInsert, btRemove, btFind, btPreOrder, heap);
         });
 
