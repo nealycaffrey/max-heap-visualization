@@ -1,9 +1,10 @@
 package sample;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class Heap {
+    // max heap implemented through an ArrayList 
+    // of type Node
     public ArrayList<Node> nodes;
 
     public Heap() {
@@ -13,9 +14,6 @@ public class Heap {
     public ArrayList<Node> getNodes() {
         return nodes;
     }
-
-    // i just went to get some ramen ill brb
-    // okay, naruto
 
     public void add(Node node) {
         if(search(node.getData()) != -1) {
@@ -53,7 +51,7 @@ public class Heap {
     }
 
     // pre order traversal of array representation of heap
-    // temp  object to persist while traversing
+    // temp object to persist string while traversing
     private static ArrayList<String> tempStringArray = new ArrayList<>();
 
     public void preOrder(int index) {
@@ -69,10 +67,6 @@ public class Heap {
         tempStringArray = new ArrayList<>();
         preOrder(0);
         return tempStringArray.toArray(new String[0]);
-    }
-
-    public int find(Node node) {
-        return nodes.indexOf(node);
     }
 
     public int search(int data){
@@ -105,22 +99,6 @@ public class Heap {
 
     public static int getRightChild(int index) {
         return (2*index)+2;
-    }
-
-    //yaha tak
-    public static void main(String[] args) {
-        Heap heap = new Heap();
-        heap.add(new Node(5));
-        heap.add(new Node(1));
-        heap.add(new Node(9));
-        heap.add(new Node(10));
-        //heap.remove();
-        for(int i=0; i< heap.nodes.size(); i++){
-            System.out.print(heap.nodes.get(i).getData() + " ");
-        }
-        System.out.println();
-        System.out.println(heap.getTreeHeight());
-
     }
 
 }
